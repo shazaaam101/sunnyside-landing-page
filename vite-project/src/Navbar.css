@@ -1,0 +1,106 @@
+.Navbar {
+  position: absolute;
+  width: 100%;
+  color: var(--neutral-white);
+  z-index: 999;
+}
+
+.Navbar .logo {
+  font-weight: var(--primary-fw);
+  align-self: center;
+}
+
+.Navbar .container {
+  width: min(95%, 70rem);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  list-style: none;
+}
+
+.lists a {
+    text-decoration: none;
+    color: var(--neutral-white);
+}
+
+.Navbar .lists .primary a {
+    padding: .5em 1em;
+  border-radius: 1em;
+  cursor: pointer;
+  color: var(--neutral-white);
+  background-color: var(--neutral-white);
+  font-family: var(--fruances-font-fam);
+  transition: 0.3s ease-in-out;
+    color: var(--neutral-very-dark-blue);
+}
+
+.Navbar .lists > .primary a:is(:hover, :focus-visible) {
+    color: var(--neutral-white);
+    background-color: rgba(255,255,255,0.2)
+}
+
+.Navbar .btn {
+    display: none;
+    border: 0;
+    width: 24px;
+    height: 18px;
+    background-color: transparent;
+}
+
+@media screen and (max-width:700px) {
+
+    .Navbar .lists {
+        display: none;
+    }
+
+    .Navbar .lists.open {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        width: 80%;
+        padding-block: 2em;
+        background-color: var(--neutral-white);
+    }
+
+    .Navbar .lists.open::before {
+        position: absolute;
+        content: "";
+        bottom: 90%;
+        right: 0;
+        width: 0; 
+        height: 0; 
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent; 
+        border-right:25px solid var(--neutral-white); 
+    }
+
+    .Navbar .lists a {
+        color: var(--neutral-very-dark-grayish-blue);
+    }
+
+    .Navbar .lists .primary a {
+      color: var(--neutral-very-dark-blue);
+      background-color: var(--primary-yellow);
+    }
+
+    .Navbar .lists .primary a:is(:hover, :focus-visible) {
+        color: var(--neutral-white);
+        background-color: var(--neutral-very-dark-blue);
+    }
+
+    .Navbar .btn {
+        display: block;
+    }
+}

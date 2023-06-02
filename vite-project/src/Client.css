@@ -1,0 +1,28 @@
+.Client {
+    padding: 1rem;
+}
+
+.Client > *:not(:first-child, :last-child) {
+    margin-top: 2em;
+}
+
+.Client img {
+    max-width: 100px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    margin-inline: auto;
+}
+
+.Client .detail {
+    color: var(--neutral-very-dark-grayish-blue);
+}
+
+.Client .name {
+    font-family: var(--fruances-font-fam);
+    color: var(--neutral-very-dark-blue);
+}
+
+.Client .role {
+    color: var(--neutral-dark-grayish-blue);
+    font-size: 14px;
+}
